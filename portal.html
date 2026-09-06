@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal da Produção - Novo Pedido</title>
+  <style>
+    * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background: #f8f9fa; margin: 0; padding: 20px; }
+    .header {
+      background: white;
+      padding: 16px 24px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      margin-bottom: 24px;
+    }
+    .header h1 { font-size: 20px; margin: 0; color: #1a252f; }
+    .btn-logout {
+      background: #dc3545;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .container { max-width: 700px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    h2 { margin-top: 0; color: #2c3e50; font-size: 22px; }
+    .group { margin-bottom: 20px; }
+    label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px; }
+    select, input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ced4da;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+    button.btn-send {
+      width: 100%;
+      padding: 14px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button.btn-send:hover { background: #218838; }
+    .sucesso {
+      display: none;
+      background: #d4edda;
+      color: #155724;
+      padding: 16px;
+      border-radius: 6px;
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Trava de Segurança: Se não estiver logado, redireciona -->
+  <script>
+    if (localStorage.getItem('usuarioLogado') !== 'true') {
+      alert('Acesso negado! Faça o login primeiro.');
+      window.location.href = 'login.html';
+    }
+  </script>
+
+  <div class="header">
+    <div>
+      <h1>Painel de Pedidos de Insumos</h1>
+      <small id="welcomeMsg" style="color: #6c757d;"></small>
+    </div>
+    <button class="btn-logout" onclick="logout()">Sair</button>
+  </div>
+
+  <div class="container">
+    <h2>Enviar Novo Pedido para Produção</h2>
+    <form id="pedidoForm">
+      
+      <div class="group">
+        <label for="insumo">Insumo / Matéria-Prima</label>
+        <select id="insumo" required>
+          <option value="">Selecione um item...</option>
+          <option value="Molas Ensacadas (Lote A1)">Molas Ensacadas (Lote A1)</option>
+          <option value="Espuma Viscoelástica (Densidade 33)">Espuma Viscoelástica (Densidade 33)</option>
+          <option value="Tecido Jacquard Bordado">Tecido Jacquard Bordado</option>
+          <option value="Estrutura de Madeira Tratada">Estrutura de Madeira Tratada</option>
+        </select>
+      </div>
+
+      <div class="group">
+        <label for="quantidade">Quantidade Requerida</label>
+        <input type="number" id="quantidade" min="1" placeholder="Ex: 50" required>
+      </div>
+
+      <div class="group">
+        <label for="dataEntrega">Data Prevista de Entrega</label>
+        <input type="date" id="dataEntrega" required>
+      </div>
+
+      <div class="group">
+        <label for="obs">Observações para a Linha de Produção</label>
+        <textarea id="obs" rows="3" placeholder="Informações adicionais sobre lote, especificações, etc."></textarea>
+      </div>
+
+      <button type="submit" class="btn-send">🚀 Enviar Pedido Direto para Produção</button>
+    </form>
+
+    <div id="msgSucesso" class="sucesso">
+      ✅ <strong>Pedido recebido com sucesso!</strong><br>
+      A equipe de produção recebeu sua requisição no sistema.
+    </div>
+  </div>
+
+  <script>
+    // Mostra o nome do fornecedor que fez login
+    document.getElementById('welcomeMsg').innerText = 'Logado como: ' + localStorage.getItem('nomeFornecedor');
+
+    // Envio do formulário
+    document.getElementById('pedidoForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const insumo = document.getElementById('insumo').value;
+      const quantidade = document.getElementById('quantidade').value;
+      const data = document.getElementById('dataEntrega').value;
+
+      // Aqui no futuro este código enviará os dados para o Supabase ou disparará um e-mail/WhatsApp.
+      document.getElementById('msgSucesso').style.display = 'block';
+      this.reset();
+    });
+
+    // Função de Logout
+    function logout() {
+      localStorage.removeItem('usuarioLogado');
+      localStorage.removeItem('nomeFornecedor');
+      window.location.href = 'login.html';
+    }
+  </script>
+
+</body>
+</html>

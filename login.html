@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal do Fornecedor - Login</title>
+  <style>
+    * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body {
+      background: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card-login {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      width: 100%;
+      max-width: 400px;
+    }
+    h2 { margin-top: 0; color: #1a252f; font-size: 24px; text-align: center; }
+    p { color: #6c757d; font-size: 14px; text-align: center; margin-bottom: 24px; }
+    .group { margin-bottom: 16px; }
+    label { display: block; font-size: 14px; color: #333; margin-bottom: 6px; font-weight: 600; }
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ced4da;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+    input:focus { outline: none; border-color: #0056b3; }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #0056b3;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover { background: #004085; }
+    .demo-info {
+      margin-top: 20px;
+      padding: 12px;
+      background: #e9ecef;
+      border-radius: 6px;
+      font-size: 12px;
+      color: #495057;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card-login">
+    <h2>Acesso Fornecedores</h2>
+    <p>Entre para realizar pedidos de insumos</p>
+
+    <form id="loginForm">
+      <div class="group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" required placeholder="seu@email.com">
+      </div>
+      <div class="group">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" required placeholder="••••••••">
+      </div>
+      <button type="submit">Entrar no Portal</button>
+    </form>
+
+    <div class="demo-info">
+      <strong>Dados para Teste:</strong><br>
+      E-mail: <code>fornecedor@teste.com</code><br>
+      Senha: <code>123456</code>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const email = document.getElementById('email').value;
+      const senha = document.getElementById('senha').value;
+
+      // Simulação de validação de credenciais
+      if (email === 'fornecedor@teste.com' && senha === '123456') {
+        // Grava no navegador que o usuário está logado
+        localStorage.setItem('usuarioLogado', 'true');
+        localStorage.setItem('nomeFornecedor', 'Fornecedor Exemplo LTDA');
+        
+        // Redireciona para o painel de pedidos
+        window.location.href = 'portal.html';
+      } else {
+        alert('Credenciais incorretas! Use os dados de teste informados abaixo.');
+      }
+    });
+  </script>
+
+</body>
+</html>
