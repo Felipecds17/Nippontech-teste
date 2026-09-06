@@ -3,13 +3,270 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Primeiro Site Comercial</title>
+  <title>Nippon Class | Colchões Magnéticos e Tecnologia do Sono</title>
+  
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome para Ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Olha, mô! Meu primeiro site rodando no navegador de verdade</h1>
-  <p>Você me ama?</p>
-  <button id="btn">Clique aqui</button>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="#" class="logo">
+        Nippon<span>Class</span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link">Início</a></li>
+          <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
+          <li><a href="#produtos" class="nav-link">Linhas</a></li>
+          <li><a href="#tecnologia" class="nav-link">Tecnologia</a></li>
+          <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
+        </ul>
+      </nav>
+
+      <a href="#" class="btn btn-whatsapp btn-header js-whatsapp-btn">
+        <i class="fa-brands fa-whatsapp"></i> Falar com Especialista
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="badge">A Revolução do Seu Sono</span>
+        <h1>A tecnologia que transforma suas noites e renova seus dias</h1>
+        <p>Desenvolvidos com ergonomia avançada e tecnologia magnética para aliviar dores na coluna, melhorar a circulação e proporcionar o descanso profundo que seu corpo merece.</p>
+        <div class="hero-buttons">
+          <a href="#" class="btn btn-primary js-whatsapp-btn">
+            <i class="fa-brands fa-whatsapp"></i> Solicitar Orçamento
+          </a>
+          <a href="#produtos" class="btn btn-secondary">Conhecer Linhas</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80" alt="Quarto moderno com colchão de alto padrão Nippon Class">
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="features" id="diferenciais">
+    <div class="container">
+      <div class="section-title">
+        <h2>Por que priorizar o seu sono?</h2>
+        <p>Nossos sistemas de descanso unem ciência, conforto e durabilidade.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-magnet"></i></div>
+          <h3>Tecnologia Magnética</h3>
+          <p>Estimula a circulação sanguínea e auxilia no relaxamento muscular durante o sono.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-bone"></i></div>
+          <h3>Alinhamento Postural</h3>
+          <p>Densidade progressiva que se adapta às curvas do corpo, aliviando pontos de pressão.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-temperature-arrow-down"></i></div>
+          <h3>Pastilhas de Infravermelho</h3>
+          <p>Auxiliam no combate à fadiga diária e promovem a renovação celular.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Tratamento Hipoalergênico</h3>
+          <p>Proteção ativa contra ácaros, fungos e bactérias para uma respiração limpa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUTOS / LINHAS -->
+  <section class="products" id="produtos">
+    <div class="container">
+      <div class="section-title">
+        <h2>Nossas Linhas de Colchões</h2>
+        <p>Encontre o modelo ideal para a sua necessidade e estilo de vida.</p>
+      </div>
+
+      <div class="products-grid">
+        <!-- Produto 1 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=600&q=80" alt="Linha Gold Nippon Class">
+          </div>
+          <div class="product-content">
+            <h3>Linha Gold Health</h3>
+            <p>Ideal para quem busca prevenção de dores e suporte postural biomecânico.</p>
+            <ul class="product-benefits">
+              <li><i class="fa-solid fa-check"></i> Camadas Múltiplas de Conforto</li>
+              <li><i class="fa-solid fa-check"></i> Magnetos & Infravermelho Longo</li>
+              <li><i class="fa-solid fa-check"></i> Tecido em Malha Soft Importada</li>
+            </ul>
+            <a href="#" class="btn btn-card js-whatsapp-btn">Consultar Medidas e Preços</a>
+          </div>
+        </div>
+
+        <!-- Produto 2 -->
+        <div class="product-card featured">
+          <div class="badge-featured">Mais Vendido</div>
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=80" alt="Linha Platinum Nippon Class">
+          </div>
+          <div class="product-content">
+            <h3>Linha Platinum Bio</h3>
+            <p>Combinação perfeita entre massagem vibroterápica e tecnologia terapêutica.</p>
+            <ul class="product-benefits">
+              <li><i class="fa-solid fa-check"></i> Sistema de Massagem Multiponto</li>
+              <li><i class="fa-solid fa-check"></i> Controle Touch com Timer</li>
+              <li><i class="fa-solid fa-check"></i> Perfilados Rabatan Tratados</li>
+            </ul>
+            <a href="#" class="btn btn-card btn-primary js-whatsapp-btn">Consultar Medidas e Preços</a>
+          </div>
+        </div>
+
+        <!-- Produto 3 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=600&q=80" alt="Linha Imperial Nippon Class">
+          </div>
+          <div class="product-content">
+            <h3>Linha Imperial Luxury</h3>
+            <p>A experiência máxima de luxo, acabamento premium e tecnologia avançada do sono.</p>
+            <ul class="product-benefits">
+              <li><i class="fa-solid fa-check"></i> Tecido Europillow com Fios de Seda</li>
+              <li><i class="fa-solid fa-check"></i> Sistema Terapêutico Completo</li>
+              <li><i class="fa-solid fa-check"></i> Garantia Estendida de Fábrica</li>
+            </ul>
+            <a href="#" class="btn btn-card js-whatsapp-btn">Consultar Medidas e Preços</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUE ESCOLHER -->
+  <section class="about" id="tecnologia">
+    <div class="container about-container">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" alt="Tecnologia do sono Nippon Class">
+      </div>
+      <div class="about-content">
+        <h2>A Ciência Por Trás da Marca Nippon Class</h2>
+        <p>Mais do que vender colchões, nossa missão é proporcionar qualidade de vida através da medicina do sono. Passamos um terço de nossas vidas na cama — esse tempo precisa ser restaurador.</p>
+        
+        <div class="about-stats">
+          <div class="stat">
+            <h4>10+</h4>
+            <p>Anos de Garantia</p>
+          </div>
+          <div class="stat">
+            <h4>98%</h4>
+            <p>Aprovação dos Clientes</p>
+          </div>
+          <div class="stat">
+            <h4>100%</h4>
+            <p>Ergonomia Testada</p>
+          </div>
+        </div>
+
+        <a href="#" class="btn btn-primary js-whatsapp-btn">
+          <i class="fa-brands fa-whatsapp"></i> Falar com um Consultor de Sono
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="testimonials" id="depoimentos">
+    <div class="container">
+      <div class="section-title">
+        <h2>O que nossos clientes dizem</h2>
+        <p>Depoimentos reais de quem transformou suas noites de sono.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Depois que troquei pelo colchão da Nippon Class, minhas dores na região lombar sumiram em menos de três semanas. O atendimento e a entrega foram impecáveis!"</p>
+          <div class="author">
+            <strong>Carlos Eduardo M.</strong>
+            <span>São Paulo, SP</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"A função de massagem é relaxante demais antes de dormir. O investimento se paga pela disposição que a gente acorda no dia seguinte."</p>
+          <div class="author">
+            <strong>Fernanda Ramos</strong>
+            <span>Campinas, SP</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Comprei para os meus pais e a qualidade do sono deles mudou completamente. Produto de altíssima qualidade e acabamento impecável."</p>
+          <div class="author">
+            <strong>Roberto Silveira</strong>
+            <span>Curitiba, PR</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-col">
+        <a href="#" class="logo footer-logo">Nippon<span>Class</span></a>
+        <p>Especialistas em tecnologia do sono, saúde postural e conforto de alto padrão.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#produtos">Linhas de Colchões</a></li>
+          <li><a href="#tecnologia">Tecnologia</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Atendimento</h4>
+        <p><i class="fa-solid fa-phone"></i> (11) 99999-9999</p>
+        <p><i class="fa-solid fa-envelope"></i> contato@nipponclass.com.br</p>
+        <p><i class="fa-solid fa-location-dot"></i> Atendimento em todo o Brasil</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Nippon Class. Todos os direitos reservados. Desenvolvido para alta conversão.</p>
+      </div>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
